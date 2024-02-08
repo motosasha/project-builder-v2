@@ -20,54 +20,14 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    // Семантические цвета
-    --brand-primary: #636cff;
-    --brand-primary-light: #9499ff;
-    --brand-primary-dark: #353fe8;
     --front-primary: rgb(60 60 67 / 92%);
-    --front-secondary: rgb(60 60 67 / 70%);
-    --front-tertiary: rgb(60 60 67 / 40%);
-    --front-invert: #fff;
     --back-primary: #fff;
-    --back-secondary: #f6f6f7;
-    --back-tertiary: #e0e0e0;
-    --back-transparency: rgb(255 255 255 / 70%);
-    --color-warning: #f43f5e;
-
-    // Оформление
-    --border-primary: #e7e7e8;
-    --border-button: rgb(60 60 67 / 30%);
-    --border-button-disabled: rgb(60 60 67 / 15%);
-    --divider: rgb(60 60 67 / 12%);
-    --gradient: linear-gradient(91.75deg, #646cff 0%, #bd34fe 100%);
-    --link-hover-color: #636cff;
-    --shadow-default: 0 0 10px rgb(0 0 0 / 10%);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    // Семантические цвета
-    --brand-primary: #636cff;
-    --brand-primary-light: #23253f;
-    --brand-primary-dark: #353fe8;
     --front-primary: rgb(255 255 255 / 92%);
-    --front-secondary: rgb(255 255 255 / 70%);
-    --front-tertiary: rgb(255 255 255 / 40%);
-    --front-invert: #cbcbe0;
     --back-primary: #19191e;
-    --back-secondary: #1f1f25;
-    --back-tertiary: #292932;
-    --back-transparency: rgb(25 25 30 / 70%);
-    --color-warning: #f43f5e;
-
-    // Оформление
-    --border-primary: #27272f;
-    --border-button: rgb(255 255 255 / 30%);
-    --border-button-disabled: rgb(255 255 255 / 15%);
-    --divider: rgb(255 255 255 / 12%);
-    --gradient: linear-gradient(91.75deg, #646cff 0%, #bd34fe 100%);
-    --link-hover-color: #636cff;
-    --shadow-default: 0 0 10px rgb(255 255 255 / 10%);
   }
 }
