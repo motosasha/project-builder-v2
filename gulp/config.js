@@ -41,22 +41,22 @@ const fromObj = {
 const toObj = {
   root: "build",
   get pages() {
-    return `${this.root}/${pathToPrefix}/`;
+    return `${this.root}${pathToPrefix}/`;
   },
   get style() {
-    return `${this.root}/${pathToPrefix}/css`;
+    return `${this.root}${pathToPrefix}/css`;
   },
   get js() {
-    return `${this.root}/${pathToPrefix}/js`;
+    return `${this.root}${pathToPrefix}/js`;
   },
   get img() {
-    return `${this.root}/${pathToPrefix}/img`;
+    return `${this.root}${pathToPrefix}/img`;
   },
   get assets() {
-    return `${this.root}/${pathToPrefix}/assets`;
+    return `${this.root}${pathToPrefix}/assets`;
   },
   get fonts() {
-    return `${this.root}/${pathToPrefix}/fonts`;
+    return `${this.root}${pathToPrefix}/fonts`;
   },
 };
 
