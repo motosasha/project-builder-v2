@@ -103,5 +103,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "volta": {
+    "node": "20.11.0"
   }
 }
