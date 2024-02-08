@@ -6,7 +6,7 @@
   "license": "WTFPL",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.thecoders.ru/a.motorygin/project-builder-v2"
+    "url": "git+https://github.com/motosasha/project-builder-v2"
   },
   "type": "module",
   "node version": "12+",
@@ -23,7 +23,7 @@
     "build": "cross-env MODE=production gulp build",
     "clear": "gulp dev:clear",
     "lint-staged": "lint-staged",
-    "deploy": "gulp dev:deploy"
+    "deploy": "cross-env MODE=deploy gulp deploy"
   },
   "lint-staged": {
     "*.{js,pug,md}": "editorconfig-cli",

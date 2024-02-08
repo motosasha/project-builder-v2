@@ -55,3 +55,11 @@ task("build", series(
   parallel("copy:sources", "copy:blockImg", "compile:svgSprite"),
   "dev:log",
 ));
+
+task("deploy", series(
+  parallel("dev:clear", "dev:graph"),
+  parallel("compile:pugMixin", "compile:sassMixin", "compile:jsRequires", "compile:json"),
+  parallel("compile:pugFast", "compile:sass", "compile:js"),
+  parallel("copy:sources", "copy:blockImg", "compile:svgSprite"),
+  "dev:deploy"
+));

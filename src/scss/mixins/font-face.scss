@@ -6,6 +6,6 @@
     font-display: swap;
     src: url("/{{fonts}}/#{$filename}.woff2") format("woff2");
     // url("/{{fonts}}/#{$filename}.woff") format("woff"),
-    // local("#{$fontName}"),
+    // local("#{$fontName}");
   }
 }

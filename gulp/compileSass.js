@@ -36,7 +36,7 @@ const postCssPlugins = [
   }),
   replace({
     commentsOnly: false,
-    data: config.paths,
+    data: config.paths.style,
     pattern: "/{{([^\\s]+?)}}/",
   }),
   atImport(),
