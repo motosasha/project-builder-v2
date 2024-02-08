@@ -23,7 +23,7 @@
     "build": "cross-env MODE=production gulp build",
     "clear": "gulp dev:clear",
     "lint-staged": "lint-staged",
-    "deploy": "gulp deploy"
+    "deploy": "gulp dev:deploy"
   },
   "lint-staged": {
     "*.{js,pug,md}": "editorconfig-cli",
