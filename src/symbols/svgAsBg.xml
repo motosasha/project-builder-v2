@@ -1,0 +1,5 @@
+<view id="icon__arrow--down-view" viewBox="0 0 24 24"/>
+<use href="#icon__arrow--down" width="24" height="24" x="0" y="0" />
+
+<view id="icon__default-view" viewBox="0 80 24 24"/>
+<use href="#icon__default" width="24" height="24" x="0" y="80" />

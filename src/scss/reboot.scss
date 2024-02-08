@@ -1,0 +1,41 @@
+:root {
+  font-size: var(--font-size-root);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  font-size: var(--font-size-root);
+  font-family: sans-serif;
+  line-height: normal;
+  -webkit-tap-highlight-color: rgb(var(--color-black) 0);
+  -webkit-text-size-adjust: 100%; // stylelint-disable-line
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--body-color);
+  font-weight: var(--font-weight-base);
+  font-size: var(--font-size-base);
+  font-family: var(--font-base);
+  line-height: var(--line-height-base);
+  background-color: var(--body-bg);
+}
+
+svg {
+  display: block;
+}
+
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+[hidden] {
+  display: none;
+}

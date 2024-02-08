@@ -1,0 +1,34 @@
+//- Basic page template
+
+include mixins.pug
+
+- var isMainPage = false
+- var pageTitle = "title"
+- var metaDescription = "description"
+- var metaKeywords = "keywords"
+- var json = locals
+- var path = pugPaths
+
+block variables
+
+doctype html
+html(class="no-js", lang="ru")
+  include ./template__default-head.pug
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+
+    .page
+      .page__header
+        +header
+      .page__main
+        block content
+          .content-filler content-filler
+      .page__footer
+        +footer
+
+    block templates
+
+    script(src= path.js + "bundle.js")
+
+    block scripts

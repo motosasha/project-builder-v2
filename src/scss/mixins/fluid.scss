@@ -1,0 +1,15 @@
+//- Принимает:
+//-   $min    {number} - минимальный размер
+//-   $max    {number} - максимальный размер
+//-   $wMin   {number} - минимальная ширина экрана
+//-   $wMax   {number} - максимальная ширина экрана
+//- Примеры использования:
+//-   font-size: fluid(16, 20, 992, 1440)
+//-   gap: fluid(12, 24, 360, 576);
+//-   padding: fluid(20, 48, 1280, 1920);
+
+@function fluid($min, $max, $wMin, $wMax) {
+  $result: calc(#{$min}px + ( #{$max} - #{$min} ) * ( (100vw - #{$wMin}px) / ( #{$wMax} - #{$wMin}) ));
+
+  @return $result;
+}

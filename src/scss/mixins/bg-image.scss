@@ -1,0 +1,5 @@
+@mixin bg-image ($size:"contain", $position: "center") {
+  background-repeat: no-repeat;
+  background-position: #{$position};
+  background-size: #{$size};
+}

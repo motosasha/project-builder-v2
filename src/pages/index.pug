@@ -1,0 +1,11 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Start page"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  .container
+    div!= json.info.data

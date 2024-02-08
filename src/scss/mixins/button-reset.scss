@@ -1,0 +1,10 @@
+@mixin button-reset($display: "inline-block") {
+  display: #{$display};
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  appearance: none;
+}
