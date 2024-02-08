@@ -71,6 +71,13 @@ export function server() {
     series(calcGraph, writePugMixinsFile),
   );
 
+  // Service blocks: change
+  watch(
+    [`${config.from.service}/**/*.pug`],
+    { events: ["change"], delay: 100 },
+    series(recompilePug, reload),
+  );
+
   // Templates
   const templatesWatcher = watch(
     [`${config.from.templates}/**/*.pug`, `!${config.from.templates}/mixins.pug`],

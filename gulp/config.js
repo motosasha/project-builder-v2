@@ -36,6 +36,9 @@ const fromObj = {
   get symbols() {
     return `${this.root}/symbols`;
   },
+  get service() {
+    return `${this.root}/service`;
+  },
 };
 
 const toObj = {
@@ -160,5 +163,7 @@ export const config = {
   // img copy mode
   isSeparatedBlockImg: "collected", // [false, true, "collected"]
   // log
-  logging: false
+  logging: false,
+  // navigation
+  isProjectNav: true,
 };

@@ -1,0 +1,14 @@
+{
+  "section": [
+    {
+      "title": "",
+      "pages": [
+        {
+          "title": "Main page",
+          "description": "главная страница",
+          "href": "index"
+        }
+      ]
+    }
+  ]
+}

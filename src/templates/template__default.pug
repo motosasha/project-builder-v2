@@ -8,6 +8,7 @@ include mixins.pug
 - var metaKeywords = "keywords"
 - var json = locals
 - var path = pugPaths
+- var isNav = nav
 
 block variables
 
@@ -17,6 +18,9 @@ html(class="no-js", lang="ru")
 
   body
     noscript У вас отключен JavaScript. Это пугает.
+
+    if isNav
+      include ../service/projectNav.pug
 
     .page
       .page__header
