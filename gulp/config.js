@@ -1,5 +1,5 @@
 const pathToPrefix = ``;
-const pathPugPrefix = ``;
+const pathFilesPrefix = ``;
 
 const fromObj = {
   root: "src",
@@ -80,10 +80,10 @@ export const config = {
   to: toObj,
   // paths for markup
   paths: {
-    js: `${pathPugPrefix}/js/`,
-    css: `${pathPugPrefix}/css/`,
-    img: `${pathPugPrefix}/img/`,
-    fonts: `${pathPugPrefix}/fonts/`,
+    js: `${pathFilesPrefix}/js/`,
+    css: `${pathFilesPrefix}/css/`,
+    img: `${pathFilesPrefix}/img/`,
+    fonts: `${pathFilesPrefix}/fonts/`,
     pages: `/`,
     get icon() {
       return `${this.img}svgSprite.svg#`;
@@ -115,13 +115,13 @@ export const config = {
     // "src/scss/vendor.scss",
     "src/scss/fonts.scss",
     // "src/scss/animations.scss"
-    // "somePackage/dist/somePackage.css", // для "node_modules/somePackage/dist/somePackage.css",
+    // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],
   // style imports at end
   addStyleAfter: [],
   // js imports at start
   addJsBefore: [
-    // "somePackage/dist/somePackage.js", // для "node_modules/somePackage/dist/somePackage.js",
+    // "somePackage/dist/somePackage.js", // for "node_modules/somePackage/dist/somePackage.js",
   ],
   // js imports at end
   addJsAfter: [
