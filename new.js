@@ -32,7 +32,7 @@ if (blockName) {
     } else if (extension === "md") {
       fileContent = "";
     } else if (extension === "pug") {
-      fileContent = `//- Все примеси в этом файле должны начинаться c имени блока (${blockName})\n//- Упоминание имени блока в классах обязательно, без этого он не попадёт\n//- в сборку\n\nmixin ${blockName}(text, mods)\n\n  //- Принимает:\n  //-   text    {string} - текст\n  //-   mods    {string} - список модификаторов\n  //- Вызов:\n        +${blockName}("Текст", "some-mod")\n\n  // список модификаторов\n  -\n    var allMods = "";\n    if (typeof (mods) !== "undefined" && mods) {\n      var modsList = mods.split(",");\n      for (var i = 0; i < modsList.length; i++) {\n        allMods = allMods + " ${blockName}--" + modsList[i].trim();\n      }\n    }\n\n  .${blockName}(class=allMods)&attributes(attributes)\n    .${blockName}__inner\n      block\n`;
+      fileContent = `//- Все примеси в этом файле должны начинаться c имени блока (${blockName})\n//- Упоминание имени блока в классах обязательно, без этого он не попадёт\n//- в сборку\n\nmixin ${blockName}(text, mods)\n\n  //- Принимает:\n  //-   text    {string} - текст\n  //-   mods    {string} - список модификаторов\n  //- Вызов:\n        +${blockName}("Текст", "some-mod")\n\n  //- список модификаторов\n  -\n    var allMods = "";\n    if (typeof (mods) !== "undefined" && mods) {\n      var modsList = mods.split(",");\n      for (var i = 0; i < modsList.length; i++) {\n        allMods = allMods + " ${blockName}--" + modsList[i].trim();\n      }\n    }\n\n  .${blockName}(class=allMods)&attributes(attributes)\n    .${blockName}__inner\n      block\n`;
     } else if (extension === "img") {
       const imgFolder = `${dirPath}img/`;
       if (fileExist(imgFolder) === false) {
