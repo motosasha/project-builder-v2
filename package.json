@@ -20,6 +20,7 @@
     "prettier:js": "prettier --check \"src/**/*.js\"",
     "prettier-fix:js": "prettier --write \"src/**/*.js\"",
     "start": "gulp",
+    "library": "cross-env BUILD_LIBRARY=true gulp",
     "build": "cross-env MODE=production gulp build",
     "clear": "gulp dev:clear",
     "lint-staged": "lint-staged",

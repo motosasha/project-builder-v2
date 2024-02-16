@@ -1,0 +1,53 @@
+.library-trigger
+  // delete this block if production
+
+  style.
+    :root {
+      --teal-200: #99f6e4;
+      --teal-600: #0d9488;
+      --teal-700: #0f766e;
+
+      @media (prefers-color-scheme: light) {
+        --library-trigger-bg-color: var(--teal-200);
+        --library-trigger-title-color: var(--teal-700);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        --library-trigger-bg-color: var(--teal-600);
+        --library-trigger-title-color: var(--teal-200);
+      }
+    }
+
+    .library-trigger {
+      position: fixed;
+      left: 0;
+      z-index: 999999;
+      width: 0;
+      transform: translateY(-50%);
+    }
+
+    .library-trigger__link {
+      position: fixed;
+      top: calc(12.5vh - 40px);
+      z-index: 999999;
+      padding: 10px 12px;
+      font-size: 16px;
+      text-align: left;
+      text-transform: uppercase;
+      color: var(--library-trigger-title-color);
+      background: var(--library-trigger-bg-color);
+      border: none;
+      border-radius: 0 8px 8px 0;
+      outline: none;
+      transition: all .3s;
+      opacity: 0.2;
+    }
+
+    .library-trigger__link:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+  a.library-trigger__link(href="library.html", title="Library") 📚
+
+  // delete this block if production

@@ -1,0 +1,27 @@
+//- Все примеси в этом файле должны начинаться c имени блока (library-header)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin library-header(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +library-header("some-mod")
+
+  // список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " library-header--" + modsList[i].trim();
+      }
+    }
+
+  header.library-header(class=allMods)&attributes(attributes)
+    .container
+      .library-header__inner
+        svg.logo.library-header__logo
+          use(href= path.icon + "logo__default")
+        block

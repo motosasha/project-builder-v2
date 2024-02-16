@@ -1,4 +1,4 @@
-//- Basic page template
+//- Library page template
 
 include mixins.pug
 
@@ -15,25 +15,25 @@ block variables
 
 doctype html
 html(class="no-js", lang="ru")
-  include ./template__default-head.pug
+  include ../../templates/template__default-head.pug
 
   body
     noscript У вас отключен JavaScript. Это пугает.
 
     if isNav
-      include ../service/project-nav.pug
+      include ../../service/project-nav.pug
 
     if isLibrary
-      include ../library/blocks/library-trigger/library-trigger.pug
+      include ../blocks/library-trigger/library-trigger.pug
 
     .page
       .page__header
-        +header
+        +library-header
       .page__main
         block content
           .content-filler content-filler
       .page__footer
-        +footer
+        +library-footer
 
     block templates
 

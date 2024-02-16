@@ -1,0 +1,11 @@
+extends templates/template__library.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Library page"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  .container
+    div!= json.info.data

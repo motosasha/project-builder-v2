@@ -1,0 +1,9 @@
+@import "../../../scss/breakpoints";
+
+.library-header {
+  $block-name: &; // #{$block-name}__element
+
+  &__inner {
+    padding: 8px 0;
+  }
+}

@@ -23,7 +23,7 @@ export function server() {
 
   // Pages: change, add
   watch(
-    [`${config.from.pages}/**/*.pug`],
+    [`${config.from.pages}/**/*.pug`, `${config.from.library}/library.pug`],
     { events: ["change", "add"], delay: 100 },
     series(calcGraph, compilePugFast, writeSassImportsFile, compileSass, reload),
   );
@@ -42,7 +42,10 @@ export function server() {
   });
 
   // Blocks: change
-  const blocksWatcher = watch([`${config.from.blocks}/**/*.pug`], { delay: 100 });
+  const blocksWatcher = watch(
+    [`${config.from.blocks}/**/*.pug`, `${config.from.library}/blocks/**/*.pug`],
+    { delay: 100 },
+  );
   blocksWatcher.on("change", function (filepath) {
     const rebuildPages = pagesCollector(filepath);
     console.log(`---------- Block added/changed: ${path.basename(filepath, ".pug")}`);
@@ -68,7 +71,7 @@ export function server() {
 
   // Blocks: unlink
   watch(
-    [`${config.from.blocks}/**/*.pug`],
+    [`${config.from.blocks}/**/*.pug`, `${config.from.library}/blocks/**/*.pug`],
     { events: ["unlink"], delay: 100 },
     series(calcGraph, writePugMixinsFile),
   );
@@ -82,7 +85,11 @@ export function server() {
 
   // Templates
   const templatesWatcher = watch(
-    [`${config.from.templates}/**/*.pug`, `!${config.from.templates}/mixins.pug`],
+    [
+      `${config.from.templates}/**/*.pug`,
+      `${config.from.library}/templates/**/*.pug`,
+      `!${config.from.templates}/mixins.pug`,
+    ],
     { delay: 100 },
   );
 
@@ -100,21 +107,25 @@ export function server() {
 
   // Blocks style: change
   watch(
-    [`${config.from.blocks}/**/*.scss`],
+    [`${config.from.blocks}/**/*.scss`, `${config.from.library}/blocks/**/*.scss`],
     { events: ["change"], delay: 100 },
     series(compileSass),
   );
 
   // Blocks style: add
   watch(
-    [`${config.from.blocks}/**/*.scss`],
+    [`${config.from.blocks}/**/*.scss`, `${config.from.library}/blocks/**/*.scss`],
     { events: ["add"], delay: 100 },
     series(writeSassImportsFile, compileSass),
   );
 
   // Global styles: all
   watch(
-    [`${config.from.style}/**/*.scss`, `!${config.from.style}/style.scss`],
+    [
+      `${config.from.style}/**/*.scss`,
+      `${config.from.library}/scss/**/*.scss`,
+      `!${config.from.style}/style.scss`,
+    ],
     { events: ["all"], delay: 100 },
     series(compileSass),
   );

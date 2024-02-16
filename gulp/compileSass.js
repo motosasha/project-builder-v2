@@ -44,6 +44,7 @@ const postCssPlugins = [
 
 export function compileSass() {
   const fileList = [`${config.from.style}/style.scss`];
+  if (config.buildLibrary) fileList.push(`${config.from.library}/scss/library.scss`);
   return src(fileList, { sourcemaps: true })
     .pipe(
       plumber({

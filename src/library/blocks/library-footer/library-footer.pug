@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (library-footer)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin library-footer(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +library-footer("some-mod")
+
+  // список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " library-footer--" + modsList[i].trim();
+      }
+    }
+
+  footer.library-footer(class=allMods)&attributes(attributes)
+    .container
+      .library-footer__inner Library footer
+        block

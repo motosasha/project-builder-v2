@@ -39,4 +39,6 @@ head
 
   block head
     link(rel="stylesheet", href=path.css + "style.css")
+    if isLibrary
+      link(rel="stylesheet", href=path.css + "library.css")
     script: include ../js/head-script.js

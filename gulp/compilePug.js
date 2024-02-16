@@ -11,12 +11,14 @@ import { config } from "./config.js";
 
 const { src, dest, lastRun } = gulp;
 const {
+  buildLibrary: library,
   isProjectNav: nav,
   paths: { pug: pugPaths },
   deployUrl,
 } = config;
 
 export function compilePug(pagesList) {
+  if (config.buildLibrary) pagesList.push(`${config.from.library}/library.pug`);
   return src(pagesList)
     .pipe(
       plumber({
@@ -30,7 +32,7 @@ export function compilePug(pagesList) {
     )
     .pipe(
       pug({
-        data: { pugPaths, nav, deployUrl },
+        data: { pugPaths, nav, library, deployUrl },
         locals: JSON.parse(fs.readFileSync(`${config.from.json}/data.json`, "utf8")),
       }),
     )
@@ -42,6 +44,7 @@ export function compilePug(pagesList) {
 
 export function recompilePug() {
   const pagesList = [`${config.from.pages}/**/*.pug`];
+  if (config.buildLibrary) pagesList.push(`${config.from.library}/library.pug`);
   return src(pagesList)
     .pipe(
       plumber({
@@ -55,7 +58,7 @@ export function recompilePug() {
     )
     .pipe(
       pug({
-        data: { pugPaths, nav, deployUrl },
+        data: { pugPaths, nav, library, deployUrl },
         locals: JSON.parse(fs.readFileSync(`${config.from.json}/data.json`, "utf8")),
       }),
     )
@@ -67,6 +70,7 @@ export function recompilePug() {
 
 export function compilePugFast() {
   const pagesList = [`${config.from.pages}/**/*.pug`];
+  if (config.buildLibrary) pagesList.push(`${config.from.library}/library.pug`);
   return src(pagesList, { since: lastRun(compilePugFast) })
     .pipe(newer(config.to.pages))
     .pipe(
@@ -81,7 +85,7 @@ export function compilePugFast() {
     )
     .pipe(
       pug({
-        data: { pugPaths, nav, deployUrl },
+        data: { pugPaths, nav, library, deployUrl },
         locals: JSON.parse(fs.readFileSync(`${config.from.json}/data.json`, "utf8")),
       }),
     )

@@ -53,6 +53,9 @@ const fromObj = {
   get symbols() {
     return `${this.root}/symbols`;
   },
+  get library() {
+    return `${this.root}/library`;
+  },
   get service() {
     return `${this.root}/service`;
   },
@@ -192,8 +195,8 @@ export const config = {
   mode: process.env.MODE || "development",
   // img copy mode
   isSeparatedBlockImg: "collected", // [false, true, "collected"]
-  // log
-  logging: false,
+  // library
+  buildLibrary: process.env.BUILD_LIBRARY || false,
   // navigation
   isProjectNav: true,
   // repository ghPages url
