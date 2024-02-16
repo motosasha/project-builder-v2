@@ -3,7 +3,7 @@ import gulp from "gulp";
 import cheerio from "gulp-cheerio";
 import plumber from "gulp-plumber";
 import rename from "gulp-rename";
-import svgMin from "gulp-svgmin";
+import svgo from "gulp-svgo";
 import svgStore from "gulp-svgstore";
 
 import { config } from "./config.js";
@@ -30,24 +30,23 @@ export function generateSvgSprite(cb) {
         }),
       )
       .pipe(
-        svgMin(function () {
-          return {
-            multipass: true,
-            plugins: [
-              {
-                cleanupIDs: { minify: true },
+        svgo({
+          multipass: true,
+          plugins: [
+            {
+              cleanupIDs: { minify: true },
+            },
+            {
+              removeAttrs: {
+                attrs: ["width", "height", "stroke-width"],
+                elemSeparator: ":",
+                preserveCurrentColor: true,
               },
-              {
-                name: "removeAttrs",
-                params: {
-                  attrs: "(height|width)",
-                },
-              },
-              {
-                removeViewBox: false,
-              },
-            ],
-          };
+            },
+            {
+              removeViewBox: false,
+            },
+          ],
         }),
       )
       .pipe(svgStore({ inlineSvg: true }))
