@@ -38,7 +38,7 @@ export function generateSvgSprite(cb) {
             },
             {
               removeAttrs: {
-                attrs: ["width", "height", "stroke-width"],
+                attrs: config.removeSvgAttr,
                 elemSeparator: ":",
                 preserveCurrentColor: true,
               },

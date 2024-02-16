@@ -182,6 +182,8 @@ export const config = {
   },
   // px to rem properties
   pxToRem: ["font", "font-size", "line-height", "letter-spacing"],
+  // svg attributes to be removed
+  removeSvgAttr: ["symbol:width", "symbol:height", "stroke-width"],
   // message
   doNotEditMsg:
     "\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции.\n Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n\n",
