@@ -10,7 +10,7 @@ import atImport from "postcss-import";
 import * as nodeSass from "sass";
 import autoprefixer from "autoprefixer";
 import pxToRem from "postcss-pxtorem";
-import mqPacker from "css-mqpacker";
+import sortMediaQueries from "postcss-sort-media-queries";
 import replace from "postcss-replace";
 
 import { fileURLToPath } from "url";
@@ -31,15 +31,15 @@ const postCssPlugins = [
     mediaQuery: false,
     minPixelValue: 0,
   }),
-  mqPacker({
-    sort: true,
-  }),
   replace({
     commentsOnly: false,
     data: config.paths.style,
     pattern: "/{{([^\\s]+?)}}/",
   }),
   atImport(),
+  sortMediaQueries({
+    sort: config.strategy,
+  }),
 ];
 
 export function compileSass() {

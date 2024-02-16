@@ -142,6 +142,9 @@
     }
 
     .project-nav__link + .project-nav__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 16px;
     }
 
@@ -163,7 +166,7 @@
 
     .project-nav__descr {
       font-size: 10px;
-      line-height: 1;
+      line-height: 1.2;
       color: var(--link-description-color);
       transition: color 0.2s;
     }
@@ -174,10 +177,10 @@
 
     .project-nav__trigger {
       position: fixed;
-      top: 12px;
+      top: 9px;
       z-index: 999999;
-      padding: 4px 12px 4px 8px;
-      font-size: 10px;
+      padding: 10px 12px;
+      font-size: 16px;
       text-align: left;
       text-transform: uppercase;
       color: var(--button-title-color);
@@ -220,7 +223,7 @@
                 path(d="M8.66666 7.33334L12.6667 3.33334", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
                 path(d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
 
-  button.project-nav__trigger Pages #[br] list
+  button.project-nav__trigger(title="Pages list") 📄
 
   script.
     const projectNav = document.querySelector(".project-nav");

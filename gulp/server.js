@@ -25,7 +25,7 @@ export function server() {
   watch(
     [`${config.from.pages}/**/*.pug`],
     { events: ["change", "add"], delay: 100 },
-    series(calcGraph, compilePugFast, reload),
+    series(calcGraph, compilePugFast, writeSassImportsFile, compileSass, reload),
   );
 
   // Pages: unlink
@@ -49,6 +49,8 @@ export function server() {
     if (rebuildPages.length) {
       calcGraph();
       compilePug(rebuildPages);
+      writeSassImportsFile();
+      compileSass();
       browserSync.reload();
     }
   });

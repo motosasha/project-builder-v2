@@ -1,5 +1,4 @@
-// ghPagesUrl — https://[userName].github.io/[projectName]/index.html
-let ghPagesUrl = ``;
+let ghPagesUrl = ``; // ghPagesUrl: https://[userName].github.io/[projectName]/index.html
 let pathToPrefix = ``;
 
 const htmlPathObj = {
@@ -7,14 +6,14 @@ const htmlPathObj = {
   css: ``,
   img: ``,
   fonts: ``,
-}
+};
 
 const cssPathObj = {
   js: ``,
   css: ``,
   img: ``,
   fonts: `../`,
-}
+};
 
 // deploy/build template condition
 // if (process.env.MODE === "deploy" || process.env.MODE === "production") {}
@@ -187,6 +186,8 @@ export const config = {
   classRegexp: /(?<!(=|!=|[({]|include|extends).+)((\.|\B\+)[a-zA-Z0-9-_]+)+?|(class=["']?([\w\-_ ]+)+["']?)/g,
   blockRegexp: /[^\\/]+(?=\.[^.])/g,
   templateRegexp: /(?<=extends.*templates\/).*.pug/g,
+  // strategy
+  strategy: "mobile-first", // ["mobile-first", "desktop-first"]
   // env
   mode: process.env.MODE || "development",
   // img copy mode
@@ -196,5 +197,7 @@ export const config = {
   // navigation
   isProjectNav: true,
   // repository ghPages url
-  deployUrl: ghPagesUrl
+  deployUrl: ghPagesUrl,
+  // log
+  logging: false,
 };
