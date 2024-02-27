@@ -13,5 +13,5 @@ export function writePugMixinsFile(cb) {
     )}/${blockName}/${blockName}.pug\n`;
   });
   fs.writeFileSync(`${config.from.templates}/mixins.pug`, pugMixins);
-  cb();
+  cb?.();
 }
