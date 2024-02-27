@@ -161,6 +161,11 @@ export const config = {
   addJsAfter: [
     "./script.js",
   ],
+  // style sheets
+  styleSheets: [
+    "src/scss/style.scss",
+    "src/scss/another.scss",
+  ],
   // browserSync options
   serverOptions: {
     server: toObj.root,
