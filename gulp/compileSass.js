@@ -34,7 +34,7 @@ const postCssPlugins = [
   replace({
     commentsOnly: false,
     data: config.paths.style,
-    pattern: "/{{([^\\s]+?)}}/",
+    pattern: "{{([^\\s]+?)}}",
   }),
   atImport(),
   sortMediaQueries({
