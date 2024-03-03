@@ -26,7 +26,7 @@ if (blockName) {
     let fileCreateMsg = "";
 
     if (extension === "scss") {
-      fileContent = `@import "../../scss/breakpoints";
+      fileContent = `@use "../../scss/breakpoints";
 
 .${blockName} {
   $block-name: &; // #{$block-name}__element

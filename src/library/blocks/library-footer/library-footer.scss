@@ -1,4 +1,4 @@
-@import "../../../scss/breakpoints";
+@use "../../../scss/breakpoints";
 
 .library-footer {
   $block-name: &; // #{$block-name}__element

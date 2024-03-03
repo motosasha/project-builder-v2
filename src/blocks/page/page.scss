@@ -1,4 +1,4 @@
-@import "../../scss/breakpoints";
+@use "../../scss/breakpoints";
 
 .page {
   $block-name: &; // #{$block-name}__element

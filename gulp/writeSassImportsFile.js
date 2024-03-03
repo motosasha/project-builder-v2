@@ -32,7 +32,7 @@ export function writeSassImportsFile(cb) {
     let msg = `\n/*!*${config.doNotEditMsg.replace(/\n /gm, "\n * ").replace(/\n\n$/, "\n */\n\n")}`;
     let styleImports = msg;
     newScssImportsList.forEach(function (src) {
-      styleImports += `@import '${src}';\n`;
+      styleImports += `@use '${src}';\n`;
     });
     styleImports += msg;
     fs.writeFileSync(`${config.from.style}/style.scss`, styleImports);

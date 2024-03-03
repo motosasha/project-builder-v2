@@ -1,5 +1,5 @@
-@import "fluid";
-@import "../breakpoints";
+@use "../breakpoints";
+@use "fluid";
 
 @mixin body {
   font-weight: 400;
