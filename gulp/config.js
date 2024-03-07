@@ -200,7 +200,7 @@ export const config = {
   // env
   mode: process.env.MODE || "development",
   // img copy mode
-  isSeparatedBlockImg: "collected", // [false, true, "collected"]
+  isSeparatedBlockImg: false, // [false, true, "collected"]
   // library
   buildLibrary: process.env.BUILD_LIBRARY || false,
   // navigation
