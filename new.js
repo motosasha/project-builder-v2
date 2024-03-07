@@ -36,7 +36,7 @@ if (blockName) {
       fileContent = `import ready from "../../js/utils/documentReady.js";
 
 ready(function () {
-  console.log("new block script is working");
+  console.log("${blockName} script is working");
 });
 `;
     } else if (extension === "md") {
