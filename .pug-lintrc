@@ -8,6 +8,7 @@
   "requireLowerCaseTags": true,
   "requireClassLiteralsBeforeIdLiterals": true,
   "requireClassLiteralsBeforeAttributes": true,
+  "disallowClassLiteralsBeforeIdLiterals": true,
   "disallowTrailingSpaces": true,
   "disallowSpacesInsideAttributeBrackets": true,
   "disallowLegacyMixinCall": true,
