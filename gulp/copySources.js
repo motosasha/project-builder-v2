@@ -5,9 +5,11 @@ import { fileExist } from "./utils/fileExist.js";
 
 export function copySources(cb) {
   for (let source in config.sources) {
-    let dest = config.sources[source];
+    let dest = config.sources[source][0];
+    let isFlat = config.sources[source][1];
     cpy(source, dest, {
       filter: (file) => file.nameWithoutExtension !== ".gitkeep",
+      flat: isFlat,
     });
   }
   cb();

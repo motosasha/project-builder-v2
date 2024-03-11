@@ -84,11 +84,11 @@ const toObj = {
 };
 
 const sourcesObj = {
-  "src/img/**/*.*": toObj.img,
-  "src/favicon/**/*.*": toObj.img + "/favicon",
-  "src/assets/**/*.*": toObj.assets,
-  "src/fonts/**/*.*": toObj.fonts,
-  // "node_modules/somePackage/images/*.{png,svg,jpg,jpeg}": toObj.img,
+  "src/img/**/*.*": [toObj.img, false],
+  "src/favicon/**/*.*": [toObj.img + "/favicon", false],
+  "src/assets/**/*.*": [toObj.assets, false],
+  "src/fonts/**/*.*": [toObj.fonts, false],
+  // "node_modules/somePackage/images/*.{png,svg,jpg,jpeg}": [toObj.img, false],
 };
 
 export const config = {
@@ -115,10 +115,10 @@ export const config = {
     style: {
       js: `./${cssPathObj.js}js/`,
       css: `./${cssPathObj.css}css/`,
-      img: `./${cssPathObj.img}img`,
+      img: `../${cssPathObj.img}img`,
       fonts: `../${cssPathObj.fonts}fonts/`,
       get icon() {
-        return `${this.img}svgSprite.svg#`;
+        return `${this.img}/svgSprite.svg#`;
       },
     },
     pages: `/`,
