@@ -42,28 +42,33 @@ const postCssPlugins = [
   }),
 ];
 
-export function compileSass() {
+export function compileSass(cb) {
   const fileList = config.styleSheets;
   if (config.buildLibrary) fileList.push(`${config.from.library}/scss/library.scss`);
-  return src(fileList, { sourcemaps: true })
-    .pipe(
-      plumber({
-        errorHandler: function (err) {
-          console.log(err.message);
-          this.emit("end");
-        },
-      }),
-    )
-    .pipe(debug({ title: "Compiles:" }))
-    .pipe(sass({ includePaths: [__dirname + "/", "node_modules"] }, ""))
-    .pipe(postcss(postCssPlugins))
-    .pipe(
-      csso({
-        restructure: true,
-        comments: false,
-      }),
-    )
-    .pipe(plumber.stop())
-    .pipe(dest(config.to.style, { sourcemaps: config.mode !== "production" ? "." : false }))
-    .pipe(browserSync.stream());
+
+  if (fileList.length !== 0) {
+    return src(fileList, { sourcemaps: true })
+      .pipe(
+        plumber({
+          errorHandler: function (err) {
+            console.log(err.message);
+            this.emit("end");
+          },
+        }),
+      )
+      .pipe(debug({ title: "Compiles:" }))
+      .pipe(sass({ includePaths: [__dirname + "/", "node_modules"] }, ""))
+      .pipe(postcss(postCssPlugins))
+      .pipe(
+        csso({
+          restructure: true,
+          comments: false,
+        }),
+      )
+      .pipe(plumber.stop())
+      .pipe(dest(config.to.style, { sourcemaps: config.mode !== "production" ? "." : false }))
+      .pipe(browserSync.stream());
+  } else {
+    cb?.();
+  }
 }
