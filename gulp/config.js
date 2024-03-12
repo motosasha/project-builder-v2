@@ -104,6 +104,7 @@ export const config = {
   // paths for markup
   paths: {
     pug: {
+      root: "./",
       js: `./${htmlPathObj.js}js/`,
       css: `./${htmlPathObj.css}css/`,
       img: `./${htmlPathObj.img}img/`,
@@ -113,6 +114,7 @@ export const config = {
       },
     },
     style: {
+      root: "./",
       js: `./${cssPathObj.js}js/`,
       css: `./${cssPathObj.css}css/`,
       img: `../${cssPathObj.img}img`,
